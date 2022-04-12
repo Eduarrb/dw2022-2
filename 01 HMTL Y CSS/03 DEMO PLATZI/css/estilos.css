@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+header{
+    background-color: #273b47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+header img{
+    width: 100px;
+    display: block;
+}
+header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+/* header ul li:not(:last-child){
+    border-right: 2px solid white;
+} */
+/* nth-child */
+/* #primer-li{
+    background-color: peru;
+} */
+
+/* DONT REPEAT YOURSELF - DONT DO TOO MUCH CODE */
+/* #primer-li,
+#segundo-li,
+#tercer-li{
+    background-color: peru;
+} */
+
+.border-derecho{
+    border-right: 2px solid white;
+}
+/* .font-20{
+    font-size: 30px;
+} */
+header ul li:last-child a{
+    background-color: #e74c3c;
+    padding: 3px 15px;
+    border-radius: 5px;
+    /* 
+        background: color, img, position, tamaño;
+        background-color: solo al color de fondo
+        background-position: solo hace referencia a la posicion
+    */
+}
+header ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 0 15px;
+    display: inline-block;
+}
