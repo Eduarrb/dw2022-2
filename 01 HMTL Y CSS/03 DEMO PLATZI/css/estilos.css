@@ -1,7 +1,17 @@
+/* ⚡⚡ CONSTANTES ⚡⚡ */
+.contenedor{
+    /* width: 1000px; */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body{
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
+
+/* ⚡⚡ HEADER ⚡⚡ */
 header{
     background-color: #273b47;
     display: flex;
@@ -56,4 +66,39 @@ header ul li a{
     text-decoration: none;
     padding: 0 15px;
     display: inline-block;
+}
+
+/* ⚡⚡ PORTADA ⚡⚡ */
+.portada {
+    background-color: #efefef;
+}
+
+/* .portada div{
+    border: 5px solid red;
+} */
+.portada div form {
+    /* text-align: right; */
+    display: flex;
+    justify-content: flex-end;
+    /* margin: 10px 0 10px 0; */
+    padding: 10px 0;
+}
+form input{
+    margin-right: 5px;
+}
+form button{
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+.portada div article img {
+    width: 100%;
+}
+.portada div article{
+    position: relative;
+}
+.data{
+    position: absolute;
+    top: 0;
 }
