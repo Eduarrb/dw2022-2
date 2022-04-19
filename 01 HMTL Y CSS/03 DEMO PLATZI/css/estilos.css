@@ -67,6 +67,14 @@ header ul li a{
     padding: 0 15px;
     display: inline-block;
 }
+.menu{
+    color: white;
+    border: 1px solid white;
+    padding: 3px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
 
 /* ⚡⚡ PORTADA ⚡⚡ */
 .portada {
@@ -94,11 +102,117 @@ form button{
 }
 .portada div article img {
     width: 100%;
+    display: block;
 }
 .portada div article{
     position: relative;
 }
 .data{
     position: absolute;
-    top: 0;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255,255,255,.7);
+    padding: 20px;
+}
+.data h2{
+    margin: 0;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ⚡⚡ PUBLICACIONES ⚡⚡ */
+.publicaciones{
+    /* background-color: peru; */
+    /* margin-top: 50px; */
+    /* padding-top: 50px; */
+    padding: 20px 0;
+}
+.publicaciones .contenedor{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.publicaciones .contenedor article{
+    /* width: 30%; */
+    /* width: 200px; */
+    /* width: 300vw; */
+    /* 120px - 20px = 100px*/
+    width: calc(100% / 3 - 20px);
+    margin-bottom: 30px;
+}
+.publicaciones .contenedor article img{
+    width: 100%;
+    display: block;
+}
+.publicaciones .contenedor article div div{
+    display: flex;
+    justify-content: space-between;
+}
+/* ⚡⚡ FOOTER ⚡⚡ */
+footer{
+    text-align: center;
+    padding: 30px 0;
+}
+footer span{
+    color: rgba(0,0,0,.5);
+    margin-right: 20px;
+}
+footer a{
+    text-decoration: none;
+    background-color: #eaeaea;
+    color: #4d4d4d;
+    border: 1px solid #cccccc;
+    padding: 5px 10px;
+    /* margin-right: 10px; */
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+footer a:not(:last-child){
+    margin-right: 10px;
+}
+footer a.activo{
+    background-color: transparent;
+    border: none;
+}
+
+/* ⚡⚡ RESPONSIVE DESIGN ⚡⚡ */
+/* ⚡⚡ MEDIA QUERIES - BREAKPOINTS ⚡⚡ */
+/* ⚡⚡ DESDE ESCRITORIO A CELULAR ⚡⚡ */
+
+@media only screen and (max-width: 900px){
+    /* ⚡⚡ PORTADA ⚡⚡*/
+    .data{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media only screen and (max-width: 740px){
+    /* ⚡⚡ HEADER ⚡⚡*/
+    header ul{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+
+    /* ⚡⚡ PORTADA ⚡⚡*/
+    .data{
+        position: unset;
+    }
+
+    /* ⚡⚡ PUBLICACIONES ⚡⚡*/
+    .publicaciones .contenedor article{
+        width: calc(50% - 15px);
+    }
+}
+@media only screen and (max-width: 550px){
+    .publicaciones .contenedor article{
+        width: 100%;
+    }
 }
