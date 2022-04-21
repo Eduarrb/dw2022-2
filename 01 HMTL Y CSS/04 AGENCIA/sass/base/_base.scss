@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    // 🔥🔥 TAMAÑO DE FUENTE BASE = 16PX
+    // TRANSFORMAR EL TAMAÑO DE FUENTE BASE, A UNA BASE 10 O 10PX
+    // UNIDAD DE MEDIDA REM YA NO PIXELES
+    // REM HACER REFERENCIA AL TAMAÑO DE LA FUENTE DE LA ETIQUETA ROOT -> HTML
+    // 16px -> 16rem
+    // 16PX -> 100%
+    // 10PX -> 62.5%
+    font-size: 62.5%; // -> 10px
+    // 1rem -> 10px
+    // 100px = 10rem
+    // 16px = 1.6rem
+    // 28px = 2.8rem
+}
+
+a{
+    font-size: 3.5rem;
+}
