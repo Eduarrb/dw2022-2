@@ -21,6 +21,16 @@ html{
     // 28px = 2.8rem
 }
 
-a{
-    font-size: 3.5rem;
+a,
+a:link,
+a:visited{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    display: block;
 }
