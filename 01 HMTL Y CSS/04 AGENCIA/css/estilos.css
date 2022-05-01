@@ -338,4 +338,48 @@ font-family: 'Roboto Slab', serif;
   margin-right: auto;
 }
 
+.portafolio {
+  background-color: #eeeeee;
+}
+.portafolio__contenedor__box {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.portafolio__contenedor__box__item {
+  width: calc(33.3333333333% - 2rem);
+}
+.portafolio__contenedor__box__item__imgBox {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.portafolio__contenedor__box__item__imgBox img {
+  width: 100%;
+  transition: all 0.3s;
+}
+.portafolio__contenedor__box__item__imgBox div {
+  position: absolute;
+  background-color: rgba(254, 209, 54, 0.9);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.portafolio__contenedor__box__item__imgBox:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.portafolio__contenedor__box__item__data {
+  background-color: white;
+  padding: 2rem 0;
+}
+
 /*# sourceMappingURL=estilos.css.map */
