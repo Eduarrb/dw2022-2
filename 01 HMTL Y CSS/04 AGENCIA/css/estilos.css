@@ -373,13 +373,51 @@ font-family: 'Roboto Slab', serif;
   visibility: hidden;
   transition: all 0.3s;
 }
-.portafolio__contenedor__box__item__imgBox:hover img {
-  transform: scale(1.1);
+.portafolio__contenedor__box__item__imgBox:hover div {
+  opacity: 1;
+  visibility: visible;
   transition: all 0.3s;
 }
 .portafolio__contenedor__box__item__data {
   background-color: white;
   padding: 2rem 0;
+}
+
+.about__contenedor__timeline::before {
+  content: "";
+  width: 0.2rem;
+  background-color: #e9ecef;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about__contenedor__timeline {
+  position: relative;
+}
+.about__contenedor__timeline__item {
+  position: relative;
+}
+.about__contenedor__timeline__item__imgBox {
+  width: 15rem;
+  height: 15rem;
+  border: 0.6rem solid #e9ecef;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about__contenedor__timeline__item__imgBox img {
+  width: 100%;
+  display: block;
+}
+.about__contenedor__timeline__item__panel {
+  width: 33%;
+}
+.about__contenedor__timeline__item:nth-child(even) .about__contenedor__timeline__item__panel {
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=estilos.css.map */

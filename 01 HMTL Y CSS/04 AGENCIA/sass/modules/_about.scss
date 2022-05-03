@@ -1,0 +1,47 @@
+.about{
+    &__contenedor{
+        &__timeline::before{
+            content: "";
+            width: .2rem;
+            background-color: #e9ecef;
+            // height: 100%;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__timeline{
+            position: relative;
+            &__item{
+                position: relative;
+                &__imgBox{
+                    width: 15rem;
+                    height: 15rem;
+                    border: .6rem solid #e9ecef;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    img{
+                        width: 100%;
+                        display: block;
+                        // border-radius: 50%;
+                    }
+                }
+                &__panel{
+                    width: 33%;
+                }
+                &:nth-child(even){
+                    .about__contenedor__timeline__item__panel{
+                        margin-left: auto;
+                    }
+                }
+                &:nth-child(odd){
+
+                }
+            }
+        }
+    }
+}
