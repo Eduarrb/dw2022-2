@@ -1,0 +1,40 @@
+.equipo{
+    &__contenedor{
+        &__box{
+            display: flex;
+            justify-content: space-around;
+            &__item{
+                &__imgBox{
+                    width: 22.5rem;
+                    height: 22.5rem;
+                    border: .6rem solid #d4d4d4;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        display: block;
+                        // border-radius: 50%;
+                    }
+                }
+                &__socialMedia{
+                    margin-top: 1.5rem;
+                    a{
+                        // display: inline-block;
+                        margin: 0 1rem;
+                        i{
+                            font-size: 1.5rem;
+                            width: 4rem;
+                            height: 4rem;
+                            background-color: rgba(black,.9);
+                            color: white;
+                            border-radius: 50%;
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -73,6 +73,15 @@ $font-roboto: 'Roboto Slab', serif;
 .cursiva{
     font-style: italic;
 }
+.bg-plomito{
+    background-color: #eeeeee;
+}
+.d-flex{
+    display: flex;
+}
+.justify-evenly{
+    justify-content: space-evenly;
+}
 // mt = margin-top
 .mt-1{
     margin-top: 1rem;
@@ -193,4 +202,10 @@ $font-roboto: 'Roboto Slab', serif;
 }
 .pb-10{
     padding-bottom: 10rem;
+}
+.pl-20{
+    padding-left: 20rem;
+}
+.pr-20{
+    padding-right: 20rem;
 }
