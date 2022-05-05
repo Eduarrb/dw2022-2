@@ -44,6 +44,8 @@ font-family: 'Roboto Slab', serif;
   font-weight: 700;
   padding: 2rem 4rem;
   border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-amarillo {
@@ -109,6 +111,10 @@ font-family: 'Roboto Slab', serif;
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.text-blanco {
+  color: white;
 }
 
 .mt-1 {
@@ -287,6 +293,9 @@ font-family: 'Roboto Slab', serif;
 }
 .header__nav {
   padding: 2.5rem 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 .header__nav__contenedor {
   display: flex;
@@ -314,8 +323,13 @@ font-family: 'Roboto Slab', serif;
   color: #fec503;
   transition: all 0.3s;
 }
+.header__nav.active {
+  background-color: #212529;
+  padding: 1rem;
+  transition: all 0.3s;
+}
 .header__bienvenida {
-  height: calc(100% - 9rem);
+  height: 100%;
 }
 .header__bienvenida__contenedor {
   height: 100%;
@@ -493,6 +507,43 @@ font-family: 'Roboto Slab', serif;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.contacto {
+  background-color: #212529;
+  background-image: url(../img/map-image.png);
+  background-size: cover;
+  background-position: center;
+}
+.contacto__contenedor__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem 3rem;
+}
+.contacto__contenedor__form__col {
+  width: calc(50% - 1.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.contacto__contenedor__form__col__formGroup {
+  width: 100%;
+}
+.contacto__contenedor__form__col__formGroup input,
+.contacto__contenedor__form__col__formGroup textarea {
+  width: 100%;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6rem;
+  border: none;
+  outline: 0;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.contacto__contenedor__form__col__formGroup textarea {
+  height: 100%;
+}
+.contacto__contenedor__form__btnBox {
+  width: 100%;
 }
 
 /*# sourceMappingURL=estilos.css.map */

@@ -10,6 +10,9 @@
     // & = header
     &__nav{
         padding: 2.5rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
         &__contenedor{
             display: flex;
             justify-content: space-between;
@@ -38,9 +41,15 @@
                 }
             }
         }
+        // header__nav.active
+        &.active{
+            background-color: #212529;
+            padding: 1rem;
+            transition: all .3s;
+        }
     }
     &__bienvenida{
-        height: calc(100% - 9rem);
+        height: 100%;
         &__contenedor{
             height: 100%;
             color: white;
