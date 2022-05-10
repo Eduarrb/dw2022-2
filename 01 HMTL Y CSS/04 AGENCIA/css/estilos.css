@@ -1,3 +1,13 @@
+@charset "UTF-8";
+/* BREAKPOINTS */
+/*
+DESDE UN INICIO EL TAMAÑO DE LA FUENTE BASE ES DE 16PX
+
+992PX / 16PX = 62em
+768px / 16 = 48em
+576px / 16 = 36em
+480px / 16 = 30em
+*/
 *,
 *::before,
 *::after {
@@ -34,6 +44,11 @@ font-family: 'Roboto Slab', serif;
   max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (max-width: 62em) {
+  .contenedor {
+    max-width: 72rem;
+  }
 }
 
 .btn {
@@ -296,6 +311,7 @@ font-family: 'Roboto Slab', serif;
   position: fixed;
   width: 100%;
   z-index: 1;
+  transition: all 0.3s;
 }
 .header__nav__contenedor {
   display: flex;
@@ -306,9 +322,15 @@ font-family: 'Roboto Slab', serif;
   color: #fec503;
   font-size: 2.8rem;
   font-family: "Kaushan Script", cursive;
+  transition: all 0.3s;
 }
 .header__nav__contenedor__menu {
   display: flex;
+}
+@media only screen and (max-width: 62em) {
+  .header__nav__contenedor__menu {
+    display: none;
+  }
 }
 .header__nav__contenedor__menu__item--link {
   color: white;
@@ -323,9 +345,34 @@ font-family: 'Roboto Slab', serif;
   color: #fec503;
   transition: all 0.3s;
 }
+.header__nav__contenedor--btn {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: 700;
+  display: none;
+}
+@media only screen and (max-width: 62em) {
+  .header__nav__contenedor--btn {
+    display: block;
+  }
+}
+.header__nav__contenedor--btn i {
+  margin-left: 0.5rem;
+  font-size: 1.4rem;
+}
 .header__nav.active {
   background-color: #212529;
   padding: 1rem;
+  transition: all 0.3s;
+}
+.header__nav.active .header__nav__contenedor--logo {
+  font-size: 2rem;
   transition: all 0.3s;
 }
 .header__bienvenida {

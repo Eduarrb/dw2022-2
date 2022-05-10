@@ -13,6 +13,7 @@
         position: fixed;
         width: 100%;
         z-index: 1;
+        transition: all .3s;
         &__contenedor{
             display: flex;
             justify-content: space-between;
@@ -21,9 +22,13 @@
                 color: #fec503;
                 font-size: 2.8rem;
                 font-family: $font-kaushan;
+                transition: all .3s;
             }
             &__menu{
                 display: flex;
+                @media only screen and (max-width: $bp-large){
+                    display: none;
+                }
                 &__item{
                     &--link{
                         color: white;
@@ -40,12 +45,36 @@
                     }
                 }
             }
+            &--btn{
+                font-size: 1.2rem;
+                color: rgba(white, .6);
+                font-family: $font-mont;
+                text-transform: uppercase;
+                // background-color: rgba(black, .7);
+                padding: 1rem;
+                border: 1px solid rgba(white, .3);
+                border-radius: .3rem;
+                cursor: pointer;
+                font-weight: 700;
+                display: none;
+                @media only screen and (max-width: $bp-large){
+                    display: block;
+                }
+                i{
+                    margin-left: .5rem;
+                    font-size: 1.4rem;
+                }
+            }
         }
         // header__nav.active
         &.active{
             background-color: #212529;
             padding: 1rem;
             transition: all .3s;
+            .header__nav__contenedor--logo{
+                font-size: 2rem;
+                transition: all .3s;
+            }
         }
     }
     &__bienvenida{

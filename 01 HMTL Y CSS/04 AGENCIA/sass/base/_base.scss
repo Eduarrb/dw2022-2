@@ -1,3 +1,18 @@
+/* BREAKPOINTS */
+/*
+DESDE UN INICIO EL TAMAÑO DE LA FUENTE BASE ES DE 16PX
+
+992PX / 16PX = 62em
+768px / 16 = 48em
+576px / 16 = 36em
+480px / 16 = 30em
+*/
+
+$bp-large: 62em; // cuanto vale 1em? = 16px // 992px 
+$bp-medium: 48em;
+$bp-small: 36em;
+$bp-extraSmall: 30em;
+
 *,
 *::before,
 *::after{
