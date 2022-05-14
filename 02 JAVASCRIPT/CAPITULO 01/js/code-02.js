@@ -27,4 +27,32 @@ console.log(num4 % 3); // 1
 console.log(num4 % 4); // 2
 
 num4 = num4 + 1;
+console.log(num4); // 11
+num4++; // => num4 + 1
+console.log(num4) // 12
+
+num4 = num4 + 10;
+console.log(num4); // 22
+num4 += 10; // num4 = num4 + 10
+console.log(num4); // 32
+num4 **= 2; // 
 console.log(num4);
+
+// 💥💥 METODOS
+let num5 = 10.58538445;
+console.log(num5);
+console.log(num5.toFixed(2));
+
+// ⚡⚡ MATH
+// redondeando
+let rep1 = Math.floor(num5);
+console.log(rep1);
+let rep2 = Math.ceil(num5);
+console.log(rep2);
+let rep3 = Math.round(num5);
+console.log(rep3);
+
+let aleatorio = Math.random(); // 0 a 0.999999... lo mas cercano a 1
+console.log(aleatorio);
+let ale2 = Math.floor(Math.random() * 10) + 1;
+console.log(ale2);
