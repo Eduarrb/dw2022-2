@@ -26,7 +26,7 @@ function suma(a, b){
     let res = a + b;
     // console.log(res);
     // console.log('palabra');
-    return res;
+    return ['a', 'b', 23, 100];
 }
 suma(2, 6);
 // flotando el return
