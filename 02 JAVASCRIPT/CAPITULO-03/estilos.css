@@ -36,6 +36,7 @@ button{
 }
 .popup{
     background-color: white;
+    width: 50%;
     position: relative;
     padding: 40px 20px;
     border-radius: 5px;
