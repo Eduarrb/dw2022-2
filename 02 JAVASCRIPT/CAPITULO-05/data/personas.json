@@ -1,0 +1,11 @@
+{
+    "persona1": {
+        "nombre": "juan",
+        "apellido": "quispe"
+    },
+    "persona2": {
+        "nombre": "Lucia",
+        "apellido": "Jimenez",
+        "hobbies": ["cantar", "Jugar", "etc"]
+    }
+}

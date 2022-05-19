@@ -28,5 +28,33 @@ form.addEventListener('submit', e => {
     });
     // console.log(puntaje);
     resultado.classList.remove('d-none');
-    resultado.querySelector('span').textContent = `${puntaje}%`;
+    // resultado.querySelector('span').textContent = `${puntaje}%`;
+
+    let posicionEjeY = scrollY; // 315
+    // console.log(posicionEjeY);
+    // setInterval(function(){
+    //     console.log('se repite cada segundo');
+    // }, 5000);
+    let animacionTop = setInterval(() => {
+        console.log('funciona');
+        if(posicionEjeY <= 0){
+            console.log('ya es menor o igual a 0 en el eje Y');
+            clearInterval(animacionTop);
+        } else {
+            scrollTo(0, posicionEjeY);
+            posicionEjeY -= 10;
+        }
+    }, 1);
+
+    let sumapuntajeTotal = 0;
+    let velocidad = 20;
+
+    let timer = setInterval(function(){
+        resultado.querySelector('span').textContent = `${sumapuntajeTotal}%`;
+        if(sumapuntajeTotal === puntaje){ // 75
+            clearInterval(timer);
+        } else {
+            sumapuntajeTotal++;
+        }
+    }, velocidad);
 });
