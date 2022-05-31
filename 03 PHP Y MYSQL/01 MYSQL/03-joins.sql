@@ -3,6 +3,7 @@ SELECT *
         WHERE a.peli_id = b.per_peli_id
 
 --------------------------------------------
+-- 💥💥 2 TABLAS 💥💥
 -- ⚡⚡ INNER JOIN ⚡⚡
 SELECT *
     FROM peliculas a
@@ -38,3 +39,38 @@ SELECT *
 SELECT *
     FROM personajes a
         RIGHT JOIN actores b ON a.per_act_id = b.act_id
+
+-- 💥💥 3 TABLAS 💥💥
+
+SELECT *
+    FROM peliculas a
+        INNER JOIN personajes b ON a.peli_id = b.per_peli_id 
+        INNER JOIN actores c ON c.act_id = b.per_act_id
+
+SELECT *    
+    FROM directores a
+        INNER JOIN peliculas b ON a.dire_id = b.peli_dire_id 
+        INNER JOIN personajes c ON b.peli_id = c.per_peli_id
+
+--------------------------------------------------------------------------
+SELECT *    
+    FROM directores a
+        INNER JOIN peliculas b ON a.dire_id = b.peli_dire_id
+        LEFT JOIN personajes c ON b.peli_id = c.per_peli_id
+
+SELECT *    
+    FROM directores a
+        INNER JOIN peliculas b ON a.dire_id = b.peli_dire_id
+        RIGHT JOIN personajes c ON b.peli_id = c.per_peli_id
+
+SELECT *    
+    FROM directores a
+        LEFT JOIN peliculas b ON a.dire_id = b.peli_dire_id
+        RIGHT JOIN personajes c ON b.peli_id = c.per_peli_id
+
+-----------------------------------------------------------------------------
+SELECT *    
+    FROM directores a
+        LEFT JOIN peliculas b ON a.dire_id = b.peli_dire_id
+        RIGHT JOIN personajes c ON b.peli_id = c.per_peli_id
+        INNER JOIN actores d ON d.act_id = c.per_act_id
