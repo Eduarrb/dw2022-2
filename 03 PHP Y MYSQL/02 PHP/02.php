@@ -28,7 +28,6 @@
             echo $nombre . $num;
             echo '<br>';
             echo $nombre + $num;
-
         ?>
     </section>
 </body>
