@@ -19,12 +19,13 @@
     <h1 class="text-center pt-5 pb-5 bg-primary text-white">Bienvenidos(as) a Pelicomic</h1>
     <section class="container">
         <div class="row p-4">
-            <a href="#" class="btn btn-success">Cargar Pelicula</a>
+            <a href="subir.php" class="btn btn-success">Subir Pelicula</a>
             <a href="#" class="btn btn-info ml-2">Directores</a>
         </div>
         <div class="row">
             <?php
-                $query = "SELECT 
+                $query = "SELECT
+                a.peli_id, 
                 a.peli_img,
                 a.peli_nombre,
                 a.peli_fecha_estreno,
@@ -67,7 +68,7 @@
                                 <strong>Rating: </strong><?php echo $fila["peli_restricciones"]; ?>
                             </div>
                             <div class="mt-1">
-                                <a href="#" class="btn btn-success">editar</a>
+                                <a href="actualizar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-success">editar</a>
                                 <a href="#" class="btn btn-danger">borrar</a>
                             </div>
                         </div>
