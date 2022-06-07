@@ -1,0 +1,51 @@
+/* BREAKPOINTS */
+/*
+DESDE UN INICIO EL TAMAÑO DE LA FUENTE BASE ES DE 16PX
+
+992PX / 16PX = 62em
+768px / 16 = 48em
+576px / 16 = 36em
+480px / 16 = 30em
+*/
+
+$bp-large: 62em; // cuanto vale 1em? = 16px // 992px 
+$bp-medium: 48em;
+$bp-small: 36em;
+$bp-extraSmall: 30em;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    // 🔥🔥 TAMAÑO DE FUENTE BASE = 16PX
+    // TRANSFORMAR EL TAMAÑO DE FUENTE BASE, A UNA BASE 10 O 10PX
+    // UNIDAD DE MEDIDA REM YA NO PIXELES
+    // REM HACER REFERENCIA AL TAMAÑO DE LA FUENTE DE LA ETIQUETA ROOT -> HTML
+    // 16px -> 16rem
+    // 16PX -> 100%
+    // 10PX -> 62.5%
+    font-size: 62.5%; // -> 10px
+    // 1rem -> 10px
+    // 100px = 10rem
+    // 16px = 1.6rem
+    // 28px = 2.8rem
+}
+
+a,
+a:link,
+a:visited{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    display: block;
+}

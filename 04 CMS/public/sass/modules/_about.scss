@@ -1,0 +1,107 @@
+.about{
+    &__contenedor{
+        &__timeline::before{
+            content: "";
+            width: .2rem;
+            background-color: #e9ecef;
+            // height: 100%;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            @media only screen and (max-width: $bp-medium){
+                left:4rem;
+            }
+        }
+        &__timeline{
+            position: relative;
+            &__item{
+                position: relative;
+                &__imgBox{
+                    width: 15rem;
+                    height: 15rem;
+                    border: .6rem solid #e9ecef;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @media only screen and (max-width: $bp-large){
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                    @media only screen and (max-width: $bp-medium){
+                        width: 8rem;
+                        height: 8rem;
+                        left: 4rem;
+                    }
+                    img{
+                        width: 100%;
+                        display: block;
+                        // border-radius: 50%;
+                    }
+                }
+                &__panel{
+                    width: 33%;
+                    padding-bottom: 7rem;
+                    @media only screen and (max-width: $bp-medium){
+                        width: auto;
+                    }
+                    h3{
+                        margin-bottom: 1rem;
+                    }
+                }
+                &:nth-child(even){
+                    .about__contenedor__timeline__item__panel{
+                        margin-left: auto;
+                        margin-right: 7%;
+                        @media only screen and (max-width: $bp-medium){
+                            margin-left: 10rem;
+                            margin-right: 0;
+                        }
+                    }
+                }
+                &:nth-child(odd){
+                    .about__contenedor__timeline__item__panel{
+                        text-align: right;
+                        margin-left: 7%;
+                        @media only screen and (max-width: $bp-medium){
+                            margin-left: 10rem;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            .lastItem{
+                height: 15rem;
+                @media only screen and (max-width: $bp-large){
+                    height: 10rem;
+                }
+                @media only screen and (max-width: $bp-medium){
+                    height: 8rem;
+                }
+                div{
+                    background-color: #ffc800;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        color: white;
+                        font-family: $font-mont;
+                        text-align: center;
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        @media only screen and (max-width: $bp-large){
+                            font-size: 1.3rem;
+                            padding: 0 .6rem;
+                        }
+                        @media only screen and (max-width: $bp-medium){
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -20,7 +20,7 @@
     <section class="container">
         <div class="row p-4">
             <a href="subir.php" class="btn btn-success">Subir Pelicula</a>
-            <a href="#" class="btn btn-info ml-2">Directores</a>
+            <a href="directores.php" class="btn btn-info ml-2">Directores</a>
         </div>
         <div class="row">
             <?php
@@ -69,7 +69,7 @@
                             </div>
                             <div class="mt-1">
                                 <a href="actualizar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-success">editar</a>
-                                <a href="#" class="btn btn-danger">borrar</a>
+                                <a href="borrar.php?borrar=<?php echo $fila['peli_id']; ?>" class="btn btn-danger">borrar</a>
                             </div>
                         </div>
                 <?php }

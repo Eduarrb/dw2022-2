@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2022 a las 21:38:11
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 07-06-2022 a las 04:23:19
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,8 +74,7 @@ INSERT INTO `directores` (`dire_id`, `dire_nombres`, `dire_apellidos`) VALUES
 (2, 'Sam', 'Raimi'),
 (3, 'Lana', 'Wachowski'),
 (4, 'Christopher', 'Nolan'),
-(5, 'Stanly', 'Kubric'),
-(6, 'James', 'cameron');
+(5, 'Stanly', 'Kubric');
 
 -- --------------------------------------------------------
 
@@ -87,33 +86,22 @@ DROP TABLE IF EXISTS `peliculas`;
 CREATE TABLE `peliculas` (
   `peli_id` int(10) UNSIGNED NOT NULL,
   `peli_nombre` varchar(255) NOT NULL COMMENT 'aqui va el nombre de la  pelicula',
-  `peli_img` text DEFAULT NULL,
   `peli_genero` varchar(100) NOT NULL,
   `peli_fecha_estreno` date NOT NULL,
   `peli_restricciones` varchar(20) NOT NULL COMMENT 'ejem PG = publico en general',
-  `peli_dire_id` int(11) DEFAULT NULL
+  `peli_dire_id` int(10) UNSIGNED DEFAULT NULL,
+  `peli_img` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `peliculas`
 --
 
-INSERT INTO `peliculas` (`peli_id`, `peli_nombre`, `peli_img`, `peli_genero`, `peli_fecha_estreno`, `peli_restricciones`, `peli_dire_id`) VALUES
-(1, 'Spiderman: No way home', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'ciencia ficción', '2021-12-15', 'PG-13', 1),
-(2, 'Dr. Strange: En el multiverso de la locura', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'acción', '2022-05-05', 'PG-16', 2),
-(3, 'Matrix', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'ciencia ficcion', '1999-12-24', 'PG-13', 3),
-(4, 'Avenger', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'accion', '2012-05-14', 'PG-13', NULL),
-(5, 'Interestellar', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'Drama', '2014-10-08', 'PG-18', 4),
-(6, 'El resplandor', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'terror', '1980-10-09', 'PG-18', 5),
-(7, 'Titanic', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'Drama romantico', '1997-07-07', 'PG', 6),
-(8, 'El codigo enigma', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg', 'bélica', '2017-08-19', 'PG-16', NULL),
-(9, 'Avatar', 'https://asturscore.com/wp-content/uploads/2010/09/Avatar.jpg', 'ciencia ficción', '2020-02-05', 'PG-13', 6),
-(10, 'asdsad', 'https://media.revistagq.com/photos/5f08145242f91a64e56904be/4:3/w_1440,h_1080,c_limit/avatar_aang.jpg', 'sadsad', '2022-05-31', 'asdsad', 4),
-(11, 'asdsad', 'https://media.revistagq.com/photos/5f08145242f91a64e56904be/4:3/w_1440,h_1080,c_limit/avatar_aang.jpg', 'sadsad', '2022-05-31', 'asdsad', 4),
-(12, 'asdsad', 'https://media.revistagq.com/photos/5f08145242f91a64e56904be/4:3/w_1440,h_1080,c_limit/avatar_aang.jpg', 'sadsad', '2022-05-31', 'asdsad', 4),
-(13, 'asdsad', 'https://media.revistagq.com/photos/5f08145242f91a64e56904be/4:3/w_1440,h_1080,c_limit/avatar_aang.jpg', 'sadsad', '2022-05-31', 'asdsad', 4),
-(14, '', '', '', '0000-00-00', '', 3),
-(15, '', '', '', '0000-00-00', '', 3);
+INSERT INTO `peliculas` (`peli_id`, `peli_nombre`, `peli_genero`, `peli_fecha_estreno`, `peli_restricciones`, `peli_dire_id`, `peli_img`) VALUES
+(1, 'Spiderman: No Way Home', 'Ciencia Ficción', '2021-12-15', 'PG-13', 1, 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-spider-man-no-way-home-1637136793.jpg'),
+(2, 'Dr. Strange: En el multiverso de la locura', 'acción', '2022-05-05', 'PG-16', 2, 'https://dam.smashmexico.com.mx/wp-content/uploads/2022/02/doctor-strange-nuevo-poster.jpg'),
+(3, 'Matrix', 'ciencia ficcion', '1999-12-24', 'PG-13', 3, 'https://es.web.img3.acsta.net/medias/nmedia/18/72/16/76/20065616.jpg'),
+(5, 'Interestellar', 'Drama', '2014-10-08', 'PG-18', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -173,12 +161,6 @@ INSERT INTO `personas` (`per_id`, `per_nombres`, `per_apellidos`, `per_genero`, 
 --
 
 --
--- Indices de la tabla `actores`
---
-ALTER TABLE `actores`
-  ADD PRIMARY KEY (`act_id`);
-
---
 -- Indices de la tabla `directores`
 --
 ALTER TABLE `directores`
@@ -188,7 +170,8 @@ ALTER TABLE `directores`
 -- Indices de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  ADD PRIMARY KEY (`peli_id`);
+  ADD PRIMARY KEY (`peli_id`),
+  ADD KEY `fk_direId` (`peli_dire_id`);
 
 --
 -- Indices de la tabla `personas`
@@ -202,12 +185,6 @@ ALTER TABLE `personas`
 --
 
 --
--- AUTO_INCREMENT de la tabla `actores`
---
-ALTER TABLE `actores`
-  MODIFY `act_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT de la tabla `directores`
 --
 ALTER TABLE `directores`
@@ -217,13 +194,23 @@ ALTER TABLE `directores`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `peli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `peli_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
   MODIFY `per_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `peliculas`
+--
+ALTER TABLE `peliculas`
+  ADD CONSTRAINT `fk_direId` FOREIGN KEY (`peli_dire_id`) REFERENCES `directores` (`dire_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
