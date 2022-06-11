@@ -18,7 +18,14 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                
+                <?php
+                    if(isset($_GET['header'])){
+                        // echo 'aqui carga tu componente';
+                        include(VIEW_BACK . DS . "header.php");
+                    }
+                    
+                    
+                ?>
                 <!-- /.container-fluid -->
 
             </div>

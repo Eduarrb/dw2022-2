@@ -1,11 +1,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="./">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">ADMIN AGENCIA</div>
             </a>
 
             <!-- Divider -->
@@ -25,6 +25,12 @@
             <div class="sidebar-heading">
                 Interface
             </div>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?header">
+                    <i class="fas fa-fw fa-heading"></i>
+                    <span>Header</span></a>
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
