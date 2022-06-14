@@ -40,6 +40,19 @@
         }
     }
 
+    function contar_filas($query){
+        return mysqli_num_rows($query);
+    }
+
+    function validar_contenido_tabla($tabla){
+        $query = query("SELECT * FROM {$tabla}");
+        confirmar($query);
+        if(contar_filas($query) >= 1){
+            return true;
+        }
+        return false;
+    }
+
     function display_success_msj($msj){
         $msj = <<<DELIMITADOR
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -50,5 +63,26 @@
             </div>
 DELIMITADOR;
         return $msj;
+    }
+
+    function display_danger_msj($msj){
+        $msj = <<<DELIMITADOR
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> $msj
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+DELIMITADOR;
+        return $msj;
+    }
+
+    function email_existe($email){
+        $query = query("SELECT * FROM usuarios WHERE user_email = '{$email}'");
+        confirmar($query);
+        if(contar_filas($query) >= 1){
+            return true;
+        }
+        return false;
     }
 ?>
