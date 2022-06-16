@@ -52,7 +52,7 @@
         $user_pass = limpiar_string(trim($pass));
         $user_token = md5($user_email);
         $user_pass = password_hash($user_pass, PASSWORD_BCRYPT, array('cost' => 12));
-        $query = query()
+        // $query = query()
         
     }
 
