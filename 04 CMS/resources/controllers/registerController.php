@@ -52,8 +52,30 @@
         $user_pass = limpiar_string(trim($pass));
         $user_token = md5($user_email);
         $user_pass = password_hash($user_pass, PASSWORD_BCRYPT, array('cost' => 12));
-        // $query = query()
-        
+        $query = query("INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass, user_token) VALUES ('{$user_nombres}', '{$user_apellidos}', '{$user_email}', '{$user_pass}', '{$user_token}')");
+        confirmar($query);
+        $mensaje = "Por favor activa tu cuenta mediante este <a href='http://localhost/dw2022-2/04%20CMS/public/activate.php?email={$user_email}&token={$user_token}' target='_blank'>LINK</a>";
+        send_email($user_email, 'Activa tu cuenta',$mensaje);
+        return true;
     }
 
+    function activar_usuario(){
+        if(isset($_GET['email']) && isset($_GET['token'])){
+            $user_email = limpiar_string(trim($_GET['email']));
+            $user_token = limpiar_string(trim($_GET['token']));
+            $query = query("SELECT user_id FROM usuarios WHERE user_email = '{$user_email}' AND user_token = '{$user_token}'");
+            confirmar($query);
+            $fila = fetch_array($query);
+            $user_id = $fila['user_id'];
+            if(contar_filas($query) == 1){
+                $query = query("UPDATE usuarios SET user_status = 1, user_token = '' WHERE user_id = {$user_id}");
+                confirmar($query);
+                set_mensaje(display_success_msj("Su cuenta ha sido verificada y activada, por favor inicie sesión"));
+                redirect("login.php");
+            } else {
+                set_mensaje(display_danger_msj("Los datos no son válidos. Por favor intente otra vez"));
+                redirect("register.php");
+            }
+        }
+    }
 ?>
