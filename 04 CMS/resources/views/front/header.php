@@ -21,6 +21,14 @@
                 <li class="header__nav__contenedor__menu__item">
                     <a href="#" class="header__nav__contenedor__menu__item--link">contacto</a>
                 </li>
+                <?php 
+                    if(isset($_SESSION['user_rol']) && $_SESSION['user_rol'] == 'admin'){
+                        ?>
+                            <li class="header__nav__contenedor__menu__item">
+                                <a href="admin" class="header__nav__contenedor__menu__item--link">admin</a>
+                            </li>
+                    <?php }
+                ?>
             </ul>
             <div class="header__nav__contenedor--btn">
                 menu <i class="fa-solid fa-bars"></i>

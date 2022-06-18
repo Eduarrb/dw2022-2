@@ -25,6 +25,6 @@
     // if($conexion){
     //     echo "felicidades, estas conectado ✌✌";
     // }
-    
+    mysqli_set_charset($conexion, "utf8");
     require_once("caller.php");
 ?>
