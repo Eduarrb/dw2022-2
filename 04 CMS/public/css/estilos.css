@@ -40,6 +40,7 @@ font-family: 'Merriweather', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto Slab', serif;
 */
+
 .contenedor {
   max-width: 120rem;
   margin-left: auto;
@@ -136,6 +137,9 @@ font-family: 'Roboto Slab', serif;
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+.justify-between {
+  justify-content: space-between;
 }
 
 .f-wrap {
@@ -315,6 +319,10 @@ font-family: 'Roboto Slab', serif;
 }
 .bg-port{
   background-color: #212529;
+}
+.block-center{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
