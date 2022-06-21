@@ -22,6 +22,17 @@ DELIMITADOR;
         }
     }
 
+    function get_portafolio_individual(){
+        if(isset($_GET['id'])){
+            $port_id = limpiar_string(trim($_GET['id']));
+            $query = query("UPDATE portafolio SET port_vistas = port_vistas + 1 WHERE port_id = {$port_id}");
+            confirmar($query);
+            $query = query("SELECT * FROM portafolio a INNER JOIN usuarios b ON a.port_user_id = b.user_id WHERE a.port_id = {$port_id}");
+            confirmar($query);
+            return fetch_array($query);
+        }   
+    }
+
 
     // 🔥🔥 BACK
 

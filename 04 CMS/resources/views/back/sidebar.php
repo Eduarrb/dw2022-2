@@ -31,6 +31,11 @@
                     <i class="fas fa-fw fa-heading"></i>
                     <span>Header</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?portafolio">
+                    <i class="fas fa-fw fa-portrait"></i>
+                    <span>Portafolio</span></a>
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">

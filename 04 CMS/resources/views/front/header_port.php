@@ -3,7 +3,7 @@
 <header class="headerPort">
     <nav class="headerPort__nav bg-port">
         <div class="headerPort__nav__contenedor contenedor">
-            <a href="#" class="headerPort__nav__contenedor--logo"><?php echo $fila['hea_logo_name']; ?></a>
+            <a href="./" class="headerPort__nav__contenedor--logo"><?php echo $fila['hea_logo_name']; ?></a>
             <ul class="headerPort__nav__contenedor__menu">
                 <li class="headerPort__nav__contenedor__menu__item">
                     <a href="#" class="headerPort__nav__contenedor__menu__item--link">servicios</a>
