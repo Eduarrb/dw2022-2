@@ -313,6 +313,9 @@ font-family: 'Roboto Slab', serif;
 .pr-20 {
   padding-right: 20rem;
 }
+.bg-port{
+  background-color: #212529;
+}
 
 .header {
   background-image: url(../img/header-bg.jpg);
@@ -320,7 +323,9 @@ font-family: 'Roboto Slab', serif;
   background-size: cover;
   height: 100vh;
 }
-.header__nav {
+
+.header__nav,
+.headerPort__nav {
   padding: 2.5rem 0;
   position: fixed;
   width: 100%;
@@ -328,18 +333,21 @@ font-family: 'Roboto Slab', serif;
   transition: all 0.3s;
 }
 @media only screen and (max-width: 62em) {
-  .header__nav {
+  .header__nav,
+  .headerPort__nav {
     background-color: #212529;
     transition: all 0.3s;
     padding: 1rem;
   }
 }
-.header__nav__contenedor {
+.header__nav__contenedor,
+.headerPort__nav__contenedor {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__nav__contenedor--logo {
+.header__nav__contenedor--logo,
+.headerPort__nav__contenedor--logo {
   color: #fec503;
   font-size: 2.8rem;
   font-family: "Kaushan Script", cursive;
@@ -347,15 +355,18 @@ font-family: 'Roboto Slab', serif;
   z-index: 1;
 }
 @media only screen and (max-width: 62em) {
-  .header__nav__contenedor--logo {
+  .header__nav__contenedor--logo
+  .headerPort__nav__contenedor--logo {
     font-size: 2rem;
   }
 }
-.header__nav__contenedor__menu {
+.header__nav__contenedor__menu,
+.headerPort__nav__contenedor__menu {
   display: flex;
 }
 @media only screen and (max-width: 62em) {
-  .header__nav__contenedor__menu {
+  .header__nav__contenedor__menu,
+  .headerPort__nav__contenedor__menu {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.9);
     top: 0;
@@ -367,12 +378,14 @@ font-family: 'Roboto Slab', serif;
     justify-content: center;
     transition: all 0.5s;
   }
-  .header__nav__contenedor__menu.showMenu {
+  .header__nav__contenedor__menu.showMenu
+  .headerPort__nav__contenedor__menu.showMenu {
     left: 0;
     transition: all 0.5s;
   }
 }
-.header__nav__contenedor__menu__item--link {
+.header__nav__contenedor__menu__item--link,
+.headerPort__nav__contenedor__menu__item--link {
   color: white;
   font-size: 1.4rem;
   font-family: "Montserrat", sans-serif;
@@ -382,15 +395,18 @@ font-family: 'Roboto Slab', serif;
   transition: all 0.3s;
 }
 @media only screen and (max-width: 62em) {
-  .header__nav__contenedor__menu__item--link {
+  .header__nav__contenedor__menu__item--link
+  .headerPort__nav__contenedor__menu__item--link {
     font-size: 2.8rem;
   }
 }
-.header__nav__contenedor__menu__item--link:hover {
+.header__nav__contenedor__menu__item--link:hover,
+.headerPort__nav__contenedor__menu__item--link:hover {
   color: #fec503;
   transition: all 0.3s;
 }
-.header__nav__contenedor--btn {
+.header__nav__contenedor--btn,
+.headerPort__nav__contenedor--btn {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.6);
   font-family: "Montserrat", sans-serif;
@@ -404,20 +420,24 @@ font-family: 'Roboto Slab', serif;
   z-index: 1;
 }
 @media only screen and (max-width: 62em) {
-  .header__nav__contenedor--btn {
+  .header__nav__contenedor--btn,
+  .headerPort__nav__contenedor--btn {
     display: block;
   }
 }
-.header__nav__contenedor--btn i {
+.header__nav__contenedor--btn i,
+.headerPort__nav__contenedor--btn i {
   margin-left: 0.5rem;
   font-size: 1.4rem;
 }
-.header__nav.active {
+.header__nav.active,
+.headerPort__nav.active {
   background-color: #212529;
   padding: 1rem;
   transition: all 0.3s;
 }
-.header__nav.active .header__nav__contenedor--logo {
+.header__nav.active .header__nav__contenedor--logo,
+.headerPort__nav.active .headerPort__nav__contenedor--logo {
   font-size: 2rem;
   transition: all 0.3s;
 }

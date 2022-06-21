@@ -23,3 +23,17 @@ CREATE TABLE usuarios (
 );
 
 INSERT INTO usuarios (user_nombres, user_apellidos, user_email, user_pass) VALUES ('Eduardo', 'Arroyo', 'eduardo@gmail.com', '123');
+
+CREATE TABLE portafolio (
+    port_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    port_titulo VARCHAR(20) NOT NULL,
+    port_subtitulo VARCHAR(20) NOT NULL,
+    port_img TEXT NOT NULL,
+    port_contenido TEXT NOT NULL,
+    port_fecha DATE NOT NULL,
+    port_user_id INT NOT NULL,
+    port_status VARCHAR(20),
+    port_vistas INT DEFAULT 0
+);
+
+INSERT INTO portafolio (port_titulo, port_subtitulo, port_img, port_contenido, port_fecha, port_user_id, port_status) VALUES ('Threads', 'Illustration', '01-thumbnail.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eius optio repellendus quos saepe maxime ducimus quasi placeat earum sed odit, minus consequatur dolorum tenetur. Doloremque vitae expedita voluptates nulla!', '2022-06-20', 2, 'publicado');
