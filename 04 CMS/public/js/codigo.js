@@ -31,17 +31,22 @@ window.addEventListener('scroll', function(){
 });
 
 // 🔥🔥 FUNCIONALIDAD DE CLICK PARA MOSTRAR EL MENU EN RESPONSIVE 🔥🔥
-const btnMenu = document.querySelector('.header__nav__contenedor--btn');
-const btnMenuPort = document.querySelector('.headerPort__nav__contenedor--btn');
-const menu = document.querySelector('.header__nav__contenedor__menu');
-const menuPort = document.querySelector('.headerPort__nav__contenedor__menu');
+if(document.querySelector('.header__nav__contenedor--btn')){
+    const btnMenu = document.querySelector('.header__nav__contenedor--btn');
+    const menu = document.querySelector('.header__nav__contenedor__menu');
+    btnMenu.addEventListener('click', function(){
+        // console.log('hiciste click');
+        menu.classList.toggle('showMenu');
+    })
 
-btnMenu.addEventListener('click', function(){
-    // console.log('hiciste click');
-    menu.classList.toggle('showMenu');
-})
-
-btnMenuPort.addEventListener('click', function(){
-    // console.log('hiciste click');
-    menuPort.classList.toggle('showMenu');
-})
+}
+if(document.querySelector('.headerPort__nav__contenedor--btn')){
+    const btnMenuPort = document.querySelector('.headerPort__nav__contenedor--btn');
+    const menuPort = document.querySelector('.headerPort__nav__contenedor__menu');
+    
+    
+    btnMenuPort.addEventListener('click', function(){
+        // console.log('hiciste click');
+        menuPort.classList.toggle('showMenu');
+    })
+}

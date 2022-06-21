@@ -378,7 +378,7 @@ font-family: 'Roboto Slab', serif;
     justify-content: center;
     transition: all 0.5s;
   }
-  .header__nav__contenedor__menu.showMenu
+  .header__nav__contenedor__menu.showMenu,
   .headerPort__nav__contenedor__menu.showMenu {
     left: 0;
     transition: all 0.5s;
