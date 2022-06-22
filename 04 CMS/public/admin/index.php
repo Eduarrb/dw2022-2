@@ -23,6 +23,9 @@
                         // echo 'aqui carga tu componente';
                         include(VIEW_BACK . DS . "header.php");
                     }
+                    if(isset($_GET['portafolio'])){
+                        include(VIEW_BACK . DS . "portafolio.php");
+                    }
                     
                     
                 ?>

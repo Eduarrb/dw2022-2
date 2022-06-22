@@ -12,6 +12,7 @@
 // DOCUMENT OBJECT MODEL
 // id, class, nombre etiqueta
 const nav = document.querySelector('.header__nav');
+const navPort = document.querySelector('.headerPort__nav');
 // console.log(nav);
 
 // 🔥🔥 FUNCIONALIDAD DEL MENU CON SCROLL 🔥🔥
@@ -21,17 +22,31 @@ window.addEventListener('scroll', function(){
     if(window.scrollY > 0){
         // console.log('es mayor a cero');
         nav.classList.add('active');
+        navPort.classList.add('active');
     } else {
         // console.log('es igual a 0');
         nav.classList.remove('active');
+        navPort.classList.remove('active');
     }
 });
 
 // 🔥🔥 FUNCIONALIDAD DE CLICK PARA MOSTRAR EL MENU EN RESPONSIVE 🔥🔥
-const btnMenu = document.querySelector('.header__nav__contenedor--btn');
-const menu = document.querySelector('.header__nav__contenedor__menu');
+if(document.querySelector('.header__nav__contenedor--btn')){
+    const btnMenu = document.querySelector('.header__nav__contenedor--btn');
+    const menu = document.querySelector('.header__nav__contenedor__menu');
+    btnMenu.addEventListener('click', function(){
+        // console.log('hiciste click');
+        menu.classList.toggle('showMenu');
+    })
 
-btnMenu.addEventListener('click', function(){
-    // console.log('hiciste click');
-    menu.classList.toggle('showMenu');
-})
+}
+if(document.querySelector('.headerPort__nav__contenedor--btn')){
+    const btnMenuPort = document.querySelector('.headerPort__nav__contenedor--btn');
+    const menuPort = document.querySelector('.headerPort__nav__contenedor__menu');
+    
+    
+    btnMenuPort.addEventListener('click', function(){
+        // console.log('hiciste click');
+        menuPort.classList.toggle('showMenu');
+    })
+}
