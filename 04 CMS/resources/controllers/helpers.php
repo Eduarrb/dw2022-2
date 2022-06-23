@@ -85,4 +85,10 @@ DELIMITADOR;
         }
         return false;
     }
+
+    function get_data_anyTable($tabla, $campo, $id){
+        $query = query("SELECT * FROM {$tabla} WHERE {$campo} = {$id}");
+        confirmar($query);
+        return fetch_array($query);
+    }
 ?>

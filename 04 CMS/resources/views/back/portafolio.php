@@ -11,6 +11,7 @@
                     </a>
                 </div>
             </div>
+            <?php mostrar_msj(); ?>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="text-primary mb-0">Lista de items publicados</h6>

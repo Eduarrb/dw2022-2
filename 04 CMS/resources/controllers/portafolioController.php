@@ -47,6 +47,10 @@ DELIMITADOR;
                     <td>{$fila['port_fecha']}</td>
                     <td>{$fila['port_status']}</td>
                     <td>{$fila['port_vistas']}</td>
+                    <td>
+                        <a href="index.php?portafolio_edit={$fila['port_id']}" class="btn btn-small btn-warning">editar</a>
+                    </td>
+                    
                 </tr>
 DELIMITER;
             echo $portafolio;
@@ -59,9 +63,15 @@ DELIMITER;
             $port_subtitulo = limpiar_string(trim($_POST['port_subtitulo']));
             $port_contenido = limpiar_string(trim($_POST['port_contenido']));
             $port_status = limpiar_string(trim($_POST['port_status']));
-            $port_img = $_FILES['port_img'];
+            $port_img = limpiar_string(trim($_FILES['port_img']['name']));
+            $port_img_tmp = $_FILES['port_img']['tmp_name'];
 
-            print_r($port_img);
+            move_uploaded_file($port_img_tmp, "../img/portafolio/{$port_img}");
+
+            $query = query("INSERT INTO portafolio (port_titulo, port_subtitulo, port_img, port_contenido, port_status, port_fecha, port_user_id) VALUES ('{$port_titulo}', '{$port_subtitulo}', '{$port_img}', '{$port_contenido}', '{$port_status}', NOW(), {$_SESSION['user_id']})");
+            confirmar($query);
+            set_mensaje(display_success_msj("Item agregado correctamente 👍👍"));
+            redirect('index.php?portafolio');
         }
     }
 ?>
