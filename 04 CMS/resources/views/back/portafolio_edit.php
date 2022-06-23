@@ -27,7 +27,7 @@
                             <input type="file" class="form-control" name="port_img" id="port_img">
                         </div>
                         <div class="form-group">
-                            <label for="port_contenido">Contenido</label>
+                            <label for="port_contenido">Contenidoo</label>
                             <textarea name="port_contenido" id="port_contenido" cols="30" rows="5" class="form-control"><?php echo $fila['port_contenido']; ?></textarea>
                         </div>
                         <div class="form-group">
