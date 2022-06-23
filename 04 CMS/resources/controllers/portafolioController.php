@@ -33,7 +33,35 @@ DELIMITADOR;
         }   
     }
 
-
     // 🔥🔥 BACK
+    function get_portafolios_back(){
+        $query = query("SELECT * FROM portafolio WHERE port_user_id = {$_SESSION['user_id']}");
+        confirmar($query);
+        while($fila = fetch_array($query)){
+            $portafolio = <<<DELIMITER
+                <tr>
+                    <td><a href="../portafolio.php?id={$fila['port_id']}" target="_blank">{$fila['port_titulo']}</a></td>
+                    <td>{$fila['port_subtitulo']}</td>
+                    <td><img src="../img/portafolio/{$fila['port_img']}" alt="" width="100"></td>
+                    <td style="width: 35%;">{$fila['port_contenido']}</td>
+                    <td>{$fila['port_fecha']}</td>
+                    <td>{$fila['port_status']}</td>
+                    <td>{$fila['port_vistas']}</td>
+                </tr>
+DELIMITER;
+            echo $portafolio;
+        }
+    }
 
+    function post_portafolio_back(){
+        if(isset($_POST['guardar'])){
+            $port_titulo = limpiar_string(trim($_POST['port_titulo']));
+            $port_subtitulo = limpiar_string(trim($_POST['port_subtitulo']));
+            $port_contenido = limpiar_string(trim($_POST['port_contenido']));
+            $port_status = limpiar_string(trim($_POST['port_status']));
+            $port_img = $_FILES['port_img'];
+
+            print_r($port_img);
+        }
+    }
 ?>
