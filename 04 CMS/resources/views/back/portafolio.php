@@ -17,7 +17,7 @@
                     <h6 class="text-primary mb-0">Lista de items publicados</h6>
                 </div>
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-responsive">
                         <thead>
                             <tr>
                                 <th>Título</th>
@@ -33,6 +33,7 @@
                             <?php get_portafolios_back(); ?>
                         </tbody>
                     </table>
+                    <?php elemento_delete("portafolio", "port_id", "port_img"); ?>
                 </div>
             </div>
         </div>

@@ -49,8 +49,8 @@ DELIMITADOR;
                     <td>{$fila['port_vistas']}</td>
                     <td>
                         <a href="index.php?portafolio_edit={$fila['port_id']}" class="btn btn-small btn-warning">editar</a>
+                        <a href="javascript:void(0)" class="btn btn-small btn-danger delete_link" rel="{$fila['port_id']}" tabla="portafolio">borrar</a>
                     </td>
-                    
                 </tr>
 DELIMITER;
             echo $portafolio;
@@ -66,12 +66,36 @@ DELIMITER;
             $port_img = limpiar_string(trim($_FILES['port_img']['name']));
             $port_img_tmp = $_FILES['port_img']['tmp_name'];
 
+            $port_img = md5(uniqid()) . "." . explode('.', $port_img)[1];
             move_uploaded_file($port_img_tmp, "../img/portafolio/{$port_img}");
 
             $query = query("INSERT INTO portafolio (port_titulo, port_subtitulo, port_img, port_contenido, port_status, port_fecha, port_user_id) VALUES ('{$port_titulo}', '{$port_subtitulo}', '{$port_img}', '{$port_contenido}', '{$port_status}', NOW(), {$_SESSION['user_id']})");
             confirmar($query);
             set_mensaje(display_success_msj("Item agregado correctamente 👍👍"));
             redirect('index.php?portafolio');
+        }
+    }
+
+    function post_portafolio_edit($id, $imgAnterior){
+        if(isset($_POST['editar'])){
+            $port_titulo = limpiar_string(trim($_POST['port_titulo']));
+            $port_subtitulo = limpiar_string(trim($_POST['port_subtitulo']));
+            $port_contenido = limpiar_string(trim($_POST['port_contenido']));
+            $port_status = limpiar_string(trim($_POST['port_status']));
+            $port_img = limpiar_string(trim($_FILES['port_img']['name']));
+            $port_img_tmp = $_FILES['port_img']['tmp_name'];
+            if(empty($port_img)){
+                $port_img = $imgAnterior;
+            } else {
+                $imgLocation = "../img/portafolio/{$imgAnterior}";
+                unlink($imgLocation);
+                $port_img = md5(uniqid()) . "." . explode('.', $port_img)[1];
+                move_uploaded_file($port_img_tmp, "../img/portafolio/{$port_img}");
+            }
+            $query = query("UPDATE portafolio SET port_titulo = '{$port_titulo}', port_subtitulo = '{$port_subtitulo}', port_contenido = '{$port_contenido}', port_status = '{$port_status}', port_img = '{$port_img}' WHERE port_id = {$id}");
+            confirmar($query);
+            set_mensaje(display_success_msj("Item actualizado correctamente"));
+            redirect("index.php?portafolio");
         }
     }
 ?>

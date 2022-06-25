@@ -91,4 +91,31 @@ DELIMITADOR;
         confirmar($query);
         return fetch_array($query);
     }
+
+    function mostrar_status_options($table_status){
+        if($table_status == 'publicado'){
+            ?>
+            <option value="pendiente">pendiente</option>
+        <?php }
+        else {
+            ?>
+            <option value="publicado">publicado</option>
+        <?php }
+    }
+    function elemento_delete($tabla, $campo, $imgCampo = null){
+        if(isset($_GET['delete'])){
+            $id = limpiar_string(trim($_GET['delete']));
+            if($imgCampo != null){
+                $query = query("SELECT {$imgCampo} FROM {$tabla} WHERE {$campo} = {$id}");
+                confirmar($query);
+                $fila = fetch_array($query);
+                $img = $fila[$imgCampo];
+                $imgLocation = "../img/{$tabla}/{$img}";
+                unlink($imgLocation);
+            }
+            $query = query("DELETE FROM {$tabla} WHERE {$campo} = {$id}");
+            set_mensaje(display_success_msj("Elemento eliminado correctamente"));
+            redirect("index.php?{$tabla}");
+        }
+    }
 ?>

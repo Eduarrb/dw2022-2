@@ -23,26 +23,28 @@
                             <input type="text" class="form-control" name="port_subtitulo" id="port_subtitulo" value="<?php echo $fila['port_subtitulo']; ?>">
                         </div>
                         <div class="form-group">
+                            <div>
+                                <img src="../img/portafolio/<?php echo $fila['port_img']; ?>" alt="">
+                            </div>
                             <label for="port_img">Imagen</label>
                             <input type="file" class="form-control" name="port_img" id="port_img">
                         </div>
                         <div class="form-group">
-                            <label for="port_contenido">Contenidoo</label>
+                            <label for="port_contenido">Contenido</label>
                             <textarea name="port_contenido" id="port_contenido" cols="30" rows="5" class="form-control"><?php echo $fila['port_contenido']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="port_status">Estado</label>
                             <select name="port_status" id="port_status" class="form-control">
-                                <option value="" selected disabled>Escoge una opción</option>
-                                <option value="publicado">publicado</option>
-                                <option value="pendiente">pendiente</option>
+                                <option value="<?php echo $fila['port_status']; ?>"><?php echo $fila['port_status']; ?></option>
+                                <?php mostrar_status_options($fila['port_status']); ?>
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Guardar" name="guardar" class="btn btn-success">
+                            <input type="submit" value="Editar" name="editar" class="btn btn-success">
                         </div>
                     </form>
-                    <?php  ?>
+                    <?php post_portafolio_edit($fila['port_id'], $fila['port_img']); ?>
                 </div>
             </div>
         </div>
