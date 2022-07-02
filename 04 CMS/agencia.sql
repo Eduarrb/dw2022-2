@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2022 a las 01:58:41
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 02-07-2022 a las 04:47:34
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,9 +67,7 @@ CREATE TABLE `portafolio` (
 --
 
 INSERT INTO `portafolio` (`port_id`, `port_titulo`, `port_subtitulo`, `port_img`, `port_contenido`, `port_fecha`, `port_user_id`, `port_status`, `port_vistas`) VALUES
-(1, 'Threads', 'Illustration', '01-thumbnail.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eius optio repellendus quos saepe maxime ducimus quasi placeat earum sed odit, minus consequatur dolorum tenetur. Doloremque vitae expedita voluptates nulla!', '2022-06-20', 2, 'publicado', 30),
-(2, 'Explore', 'Graphic Design', '02-thumbnail.jpg', 'contenido', '2022-06-22', 2, 'publicado', 1),
-(3, 'Finish', 'Identity', '03-thumbnail.jpg', 'contenido', '2022-06-22', 2, 'publicado', 0);
+(1, 'Threads', 'Illustration', '6ffe4e608e45f09972f428ee6e2f42d4.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eius optio repellendus quos saepe maxime ducimus quasi placeat earum sed odit, minus consequatur dolorum tenetur. Doloremque vitae expedita voluptates nulla!', '2022-06-20', 2, 'publicado', 32);
 
 -- --------------------------------------------------------
 
@@ -122,7 +120,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `portafolio`
 --
 ALTER TABLE `portafolio`
-  MODIFY `port_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `port_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
